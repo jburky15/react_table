@@ -4,18 +4,28 @@ import { useState } from 'react'
 export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
    const [formState, setFormState] = useState(
     defaultValue || {
-    page: "",
-    description: "",
-    status: "live"
+    Page: "",
+    Description: "",
+    Status: "Live"
    });
 
-   const validateForm = () => {
-      if(formState.page && formState.description && formState.status) {
-        return true;
-      } else {
-        alert("Please fill in the whole form!")
-      }
-   }
+   const [errors, setErrors] = useState("");
+
+    const validateForm = () => {
+        if (formState.page && formState.description && formState.status) {
+            setErrors("");
+            return true;
+        } else {
+        let errorFields = [];
+        for (const [key, value] of Object.entries(formState)) {
+            if (!value) {
+                errorFields.push(key);
+            }
+        }
+        setErrors(errorFields.join(", "));
+        return false;
+        }
+    };
  
    const handleChange = (e) => {
     setFormState({
@@ -52,11 +62,12 @@ export const Modal = ({ closeModal, onSubmit, defaultValue }) => {
                 <div className='form-group'>
                     <label htmlFor="status">Status</label>
                     <select name='status' value={ formState.status } onChange={ handleChange }>
-                        <option value="live">Live</option>
-                        <option value="draft">Draft</option>
-                        <option value="error">Error</option>
+                        <option value="Live">Live</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Error">Error</option>
                     </select>
                 </div>
+                {errors && <div className="error">{`Please include: ${errors}`}</div>}
                 <button type='submit' className='btn' onClick={ handleSubmit }>Submit</button>
             </form>
         </div>
