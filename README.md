@@ -6,5 +6,4 @@ TABLE TABLE TABLE TABLE!
 
 #### I'm terrible at writing Readme files for my own stuff. Have a table
 
-
-::table
+![](https://github.com/jburky15/react_table/blob/master/table_flip.gif)
