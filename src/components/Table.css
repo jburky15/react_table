@@ -1,0 +1,72 @@
+.table-wrapper {
+    width: 100%;
+}
+
+.table {
+    display: block;
+    overflow: hidden;
+    table-layout: auto;
+    border-collapse:  collapse;
+    box-shadow: 0px 10px 10px rgb(136, 136, 136);
+    border-radius: 10px;
+    white-space: nowrap;
+    width: 100em;
+    max-width: 80%;
+    margin: auto;
+    overflow-x: auto;
+}
+
+.table thead {
+    background-color: rgb(210, 230, 230);
+    color: rgb(51, 51, 51);
+}
+
+.table th, 
+.table td {
+    padding: 0.9rem;
+}
+
+.table td {
+    border-top: 0.5px solid rgb(221, 221, 221);
+    overflow: hidden;
+    text-decoration: solid;
+}
+
+.table tbody tr:hover {
+    background-color: rgb(218, 218, 218);
+}
+
+.expand {
+    width: 100%;
+}
+
+.label {
+    border-radius: 3px;
+    padding: 0.3rem;
+    color: rgb(255, 255, 255);
+}
+
+.label-draft {
+    background-color: rgb(119, 119, 119);
+}
+
+.label-live {
+    background-color: rgb(66, 169, 66);
+}
+
+.label-error {
+    background-color: rgb(219, 57, 52);
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.actions svg {
+    cursor: pointer;
+}
+
+.delete-btn {
+    color: rgb(225, 13, 5);
+}
